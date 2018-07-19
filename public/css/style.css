@@ -113,3 +113,11 @@ body {
 .mastfoot {
     color: rgba(255, 255, 255, .5);
 }
+
+.inner-cover {
+    margin-top: 50%;
+}
+
+.masthead {
+    margin-bottom: 0px !important;
+}
