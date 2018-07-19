@@ -43,10 +43,14 @@ body {
 }
 
 #inputPassword2 {
-    margin-bottom: 10px;
+    margin-bottom: 15px !important;
     border-top-left-radius: 0;
 }
 
-#inputPassword {
+.form-control #inputPassword {
     border-top-left-radius: 0;
+}
+
+.form-control {
+    margin-bottom: 5px !important;
 }
