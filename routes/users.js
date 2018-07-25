@@ -102,5 +102,44 @@ router.get('/logout', function(req, res) {
     res.redirect('/users/login');
 });
 
+// login
+router.get('/index', function(req, res) {
+    res.render('index');
+});
+
+router.get('/index', function(req, res) {
+    res.render('index');
+    res.redirect('/users/index');
+});
+
+
+
+
+var UserLocation = require('../models/location');
+
+
+router.post('/index', function(req, res) {
+    var latitude = req.body.lat;
+    var longitude = req.body.lng;
+    var username = req.user.username
+
+    console.log("Username: ", username);
+
+    var newUserLocation = new UserLocation({
+        username: username,
+        latitude: latitude,
+        longitude: longitude,
+    });
+
+    UserLocation.addLocation(newUserLocation, function(err, location) {
+        if (err) throw err;
+        console.log(location);
+    });
+
+});
+
+
+
+
 
 module.exports = router;
