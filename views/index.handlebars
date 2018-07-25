@@ -11,13 +11,10 @@
                 <div id="googleMap" style="width:100%;height:400px;"></div>
 
                 <p id="demo" name="demo">Presiona el botón para mirar tu ubicación</p>
-                 <form method="post" action="/users/index" id="fm">
+                 <form  id= "myForm" name="sumb" method="post" action="/users/index" id="fm">
                     <input type="text" id="lat" class="form-control"  name="lat" placeholder="Latitude"required autofocus>
                     <input type="text" id="lng" class="form-control"  name="lng" placeholder="Longitud"required autofocus>
-                    <button type="submit" class="btn btn-default" id="enviar">Submit</button>
                 </form>
-
-                
                 
                 
                 <script>
@@ -49,10 +46,14 @@
                             a1.value = position.coords.latitude; 
                             var a2 = document.getElementById("lng");
                             a2.value = position.coords.longitude; 
-                            //a3.value = username;
+                            document.getElementById("myForm").submit();
+                            setTimeout("window.open('http://localhost:3000', '_self');", 10000);
                     }
 
                 </script>
+
+                 
+
 
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOhIkbOglhBq0Y0Ka08iROiG_xqOKFIsA&callback=showPosition"></script>
                 {{else}}
