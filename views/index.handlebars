@@ -17,12 +17,15 @@
                 </form>
                 <button href="javascript:getmap()" id="get" onclick="getLocation()">Try It</button>
                 <script>
+
                     function getLocation() {
-                    if (navigator.geolocation) {
-                        navigator.geolocation.watchPosition(showPosition);
-                    } else {
-                        x.innerHTML = "Geolocation is not supported by this browser.";
-                    }
+                        var x = document.getElementById("demo");
+                        x.innerHTML = "ENTRAAAA"
+                        if (navigator.geolocation) {
+                            navigator.geolocation.watchPosition(showPosition);
+                        } else {
+                            x.innerHTML = "Geolocation is not supported by this browser.";
+                        }
                 }
 
                 function showPosition(position) {
