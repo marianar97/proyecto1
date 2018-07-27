@@ -13,6 +13,9 @@ const mongoose = require('mongoose');
 
 //conecta con Mongo
 mongoose.connect('mongodb://mongo-server/login');
+
+//mongoose.connect('mongodb://localhost/login');
+
 const db = mongoose.connection;
 
 const routes = require('./routes/index');
