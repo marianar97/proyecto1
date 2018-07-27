@@ -16,7 +16,24 @@
                     <input type="text" id="lng" class="form-control"  name="lng" placeholder="Longitud"required autofocus>      
                 </form>
                 <button href="javascript:getmap()" id="get" onclick="getLocation()">Try It</button>
-                
+                <script>
+                    function getLocation() {
+                    if (navigator.geolocation) {
+                        navigator.geolocation.watchPosition(showPosition);
+                    } else {
+                        x.innerHTML = "Geolocation is not supported by this browser.";
+                    }
+                }
+
+                function showPosition(position) {
+                    var x = document.getElementById("demo");
+                    x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+                    document.getElementById("lat").value = position.coords.latitude;
+                    document.getElementById("lng").value = position.coords.longitude;
+                    
+                }
+
+                </script>
                 
 
                  
