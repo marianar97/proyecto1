@@ -31,7 +31,9 @@
                     }
                     function showPosition(position) {
                         console.log(position)
-                        x.innerHTML = `tu latitud es: ${position.coords.latitude} y tu longitud es: ${position.coords.longitude}`
+                        console.log("ACAAAAAAA")
+                        x.innerHTML = position
+                        //x.innerHTML = `tu latitud es: ${position.coords.latitude} y tu longitud es: ${position.coords.longitude}`
                         var mapProp = {
                             center: new google.maps.LatLng(position.coords.latitude,position.coords.longitude ),
                             zoom: 15,
