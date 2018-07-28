@@ -4,7 +4,8 @@
              <link rel="stylesheet" href="/css/home.css"/>
         </head>
 
-        <body onload="getLocation()">
+        <!--<body onload="getLocation()">-->
+        <body>
             <main role="main" class="inner-cover">
                 {{#if user}}
 
@@ -15,6 +16,7 @@
                     <input type="text" id="lat" class="form-control"  name="lat" placeholder="Latitude"required autofocus>
                     <input type="text" id="lng" class="form-control"  name="lng" placeholder="Longitud"required autofocus>
                 </form>
+                <button onclick="getLocation()">Try It</button>
                 
                 
                 <script>
