@@ -3,4 +3,6 @@
 }
 
 #lng,
-#lat {}
+#lat {
+    display: none;
+}
