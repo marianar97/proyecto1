@@ -4,30 +4,6 @@
              <link rel="stylesheet" href="/css/home.css"/>
         </head>
 
-        <body>
-        <p>Click the button to get your coordinates.</p>
-
-        <button onclick="getLocation()">Try It</button>
-
-        <p id="demo"></p>
-
-        <script>
-                var x = document.getElementById("demo");
-
-                function getLocation() {
-                    if (navigator.geolocation) {
-                        navigator.geolocation.getCurrentPosition(showPosition);
-                    } else { 
-                        x.innerHTML = "Geolocation is not supported by this browser.";
-                    }
-                }
-
-                function showPosition(position) {
-                    x.innerHTML = "Latitude: " + position.coords.latitude + 
-                    "<br>Longitude: " + position.coords.longitude;
-                }
-        </script>
-        <!--
         <body onload="getLocation()">
             <main role="main" class="inner-cover">
                 {{#if user}}
@@ -70,11 +46,8 @@
                     }
                 </script>
 
-                 
-
-
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOhIkbOglhBq0Y0Ka08iROiG_xqOKFIsA&callback=showPosition"></script>
-                -->
+                
                 {{else}}
                     <h1 class="cover-heading">¿A dónde vas?</h1>
                     <p class="lead">Basado en los lugares en que recorres con tu celular podrás ver los sitios a los que vas en el mapa e incluso tus rutas</br> ¿Qué esperas para registrarte?</p>
@@ -83,5 +56,6 @@
                     </a>
                 {{/if}}
             </main>
+            
         </body>
 </html>
