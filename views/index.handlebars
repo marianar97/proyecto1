@@ -12,7 +12,7 @@
                 
                 <button onclick="getLocation()">Try It</button>
                 
-                <p id="demo"></p>
+                <p id="demo">ACA</p>
                 
                 <script>
                     var x = document.getElementById("demo");
@@ -26,11 +26,12 @@
                     }
 
                     function showPosition(position) {
+                        console.log(position)
                         x.innerHTML = "Latitude: " + position.coords.latitude + 
                         "<br>Longitude: " + position.coords.longitude;
                     }
                 </script>
-                
+
                 {{else}}
                     <h1 class="cover-heading">¿A dónde vas?</h1>
                     <p class="lead">Basado en los lugares en que recorres con tu celular podrás ver los sitios a los que vas en el mapa e incluso tus rutas</br> ¿Qué esperas para registrarte?</p>
