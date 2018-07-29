@@ -13,17 +13,40 @@
                         <!--Position information will be inserted here-->
                     </div>
                     <button type="button" onclick="showPosition();">Show Position</button>
+                    
                     <script type="text/javascript">
-                        function showPosition(){
-                            if(navigator.geolocation){
-                                navigator.geolocation.getCurrentPosition(function(position){
-                                    var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
-                                    document.getElementById("result").innerHTML = positionInfo;
-                                });
-                            } else{
-                                alert("Sorry, your browser does not support HTML5 geolocation.");
+                        var x = document.getElementById("demo");
+                        function getLocation() {
+                            if (navigator.geolocation) {
+                                navigator.geolocation.getCurrentPosition(showPosition);
+                                navigator.geolocation.getCurrentPosition(info);
+                            } else {
+                                x.innerHTML = "Geolocation is not supported by this browser.";
                             }
                         }
+                        function showPosition(position) {
+                            x.innerHTML = `tu latitud es: ${position.coords.latitude} y tu longitud es: ${position.coords.longitude}`
+                            var mapProp = {
+                                center: new google.maps.LatLng(position.coords.latitude,position.coords.longitude ),
+                                zoom: 15,
+                            };
+                            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                            
+                        }
+
+
+
+                    //
+                      //  function showPosition(){
+                         //   if(navigator.geolocation){
+                       //         navigator.geolocation.getCurrentPosition(function(position){
+                           //         var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
+                            //        document.getElementById("result").innerHTML = positionInfo;
+                             //   });
+                            //} else{
+                             //   alert("Sorry, your browser does not support HTML5 geolocation.");
+                           // }
+                       // }
                     </script>
                     
 
