@@ -21,7 +21,7 @@
                     function getLocation() {
                         console.log("ENTRA A GETLOCATION")
                         if (navigator.geolocation) {
-                            console.log("LLAMA A SHOWPOSITION")
+                            console.log("LLAMA A SHOWPOSITION");
                             navigator.geolocation.getCurrentPosition(showPosition);
                         } else { 
                             x.innerHTML = "Geolocation is not supported by this browser.";
@@ -29,8 +29,8 @@
                     }
 
                     function showPosition(position) {
-                        console.log("ENTRA A SHOWPOSITION")
-                        console.log(position)
+                        console.log("ENTRA A SHOWPOSITION");
+                        console.log(position);
                         x.innerHTML = "Latitude: " + position.coords.latitude + 
                         "<br>Longitude: " + position.coords.longitude;
                     }
