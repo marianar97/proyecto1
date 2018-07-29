@@ -8,34 +8,24 @@
         <body>
             <main role="main" class="inner-cover">
                 {{#if user}}
-                <p>Click the button to get your coordinates.</p>
                 
-                <button onclick="getLocation()">Try It</button>
-                
-                <p id="demo">ACA</p>
-                
-                <script>
-                    var x = document.getElementById("demo");
-                    console.log("ENTRA")
-                    x.innerHTML  = "ENTRA"
-
-                    function getLocation() {
-                        console.log("ENTRA A GETLOCATION")
-                        if (navigator.geolocation) {
-                            console.log("LLAMA A SHOWPOSITION");
-                            navigator.geolocation.getCurrentPosition(showPosition);
-                        } else { 
-                            x.innerHTML = "Geolocation is not supported by this browser.";
+                    <div id="result">
+                        <!--Position information will be inserted here-->
+                    </div>
+                    <button type="button" onclick="showPosition();">Show Position</button>
+                    <script type="text/javascript">
+                        function showPosition(){
+                            if(navigator.geolocation){
+                                navigator.geolocation.getCurrentPosition(function(position){
+                                    var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
+                                    document.getElementById("result").innerHTML = positionInfo;
+                                });
+                            } else{
+                                alert("Sorry, your browser does not support HTML5 geolocation.");
+                            }
                         }
-                    }
-
-                    function showPosition(position) {
-                        console.log("ENTRA A SHOWPOSITION");
-                        console.log("position", position);
-                        x.innerHTML = "Latitude: " + position.coords.latitude + 
-                        "<br>Longitude: " + position.coords.longitude;
-                    }
-                </script>
+                    </script>
+                    
 
                 {{else}}
                     <h1 class="cover-heading">¿A dónde vas?</h1>
