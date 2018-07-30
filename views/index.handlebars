@@ -26,7 +26,8 @@
 
                         function showPosition(position) {
                             console.log("position",position)
-                            var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
+
+                            var positionInfo = "Tu ubicación es: </br>" + "Latitud: " + position.coords.latitude + ", " + "</br> Longitud: " + position.coords.longitude;
                             document.getElementById("demo").innerHTML = positionInfo;
 
                             var mapProp = {
@@ -39,20 +40,8 @@
                         }
 
 
-
-                    //
-                      //  function showPosition(){
-                         //   if(navigator.geolocation){
-                       //         navigator.geolocation.getCurrentPosition(function(position){
-                           //         var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
-                            //        document.getElementById("result").innerHTML = positionInfo;
-                             //   });
-                            //} else{
-                             //   alert("Sorry, your browser does not support HTML5 geolocation.");
-                           // }
-                       // }
-                    </script> -->
-                    
+                    </script> 
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
 
                 {{else}}
                     <h1 class="cover-heading">¿A dónde vas?</h1>
