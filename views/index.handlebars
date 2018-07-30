@@ -26,6 +26,7 @@
                                 console.log("llama a currentPosition")
                                 navigator.geolocation.getCurrentPosition(showPosition);
                                 navigator.geolocation.getCurrentPosition(info);
+                                refresh();
                             } else {
                                 x.innerHTML = "Geolocation is not supported by this browser.";
                             }
@@ -55,9 +56,12 @@
                             a2.value = position.coords.longitude; 
                             document.getElementById("myForm").submit();
                             addMacker(parseFloat(position.coords.latitude), position.coords.longitude);
-                            setTimeout("window.open('https://10.131.137.217', '_self');", 5000);
+                            //setTimeout("window.open('https://10.131.137.217', '_self');", 5000);
                             
                         }
+                            function refresh() {
+                                var ciclo = setInterval(getLocation, 1000);
+                            }
 
 
                     </script>
