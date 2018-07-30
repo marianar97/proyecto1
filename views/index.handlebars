@@ -32,25 +32,15 @@
                             var positionInfo = "Tu ubicación es: </br>" + "Latitud: " + position.coords.latitude + ", " + "</br> Longitud: " + position.coords.longitude;
                             document.getElementById("demo").innerHTML = positionInfo;
 
-                            var mapProp = {
-                                center: new google.maps.LatLng(position.coords.latitude,position.coords.longitude ),
-                                zoom: 15,
-                            };
-
-                            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-                            myMap();
-                        }
-
-                        function myMap() {
                             var mapProp= {
-                                    center:new google.maps.LatLng(51.508742,-0.120850),
-                                    zoom:5,
-                                };
-                                var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                                center:new google.maps.LatLng(51.508742,-0.120850),
+                                zoom:5,
+                            };
+                            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
                         }
-        </script>
+                    </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap">
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOhIkbOglhBq0Y0Ka08iROiG_xqOKFIsA&callback=showPosition"></script>
 
                 {{else}}
                     <h1 class="cover-heading">¿A dónde vas?</h1>
