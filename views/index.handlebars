@@ -37,7 +37,7 @@
 
                             var positionInfo = "Tu ubicación es: </br>" + "Latitud: " + position.coords.latitude + ", " + "</br> Longitud: " + position.coords.longitude;
                             document.getElementById("demo").innerHTML = positionInfo;
-                            
+
                             var myCenter = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
                             var mapCanvas = document.getElementById("googleMap");
                             var mapOptions = {center: myCenter, zoom: 15};
@@ -55,7 +55,7 @@
                             a2.value = position.coords.longitude; 
                             document.getElementById("myForm").submit();
                             addMacker(parseFloat(position.coords.latitude), position.coords.longitude);
-                            setTimeout("window.open('https://10.131.137.217', '_self');", 10000);
+                            setTimeout("window.open('https://10.131.137.217', '_self');", 5000);
                             
                         }
 
