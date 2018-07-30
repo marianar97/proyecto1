@@ -37,11 +37,15 @@
 
                             var positionInfo = "Tu ubicación es: </br>" + "Latitud: " + position.coords.latitude + ", " + "</br> Longitud: " + position.coords.longitude;
                             document.getElementById("demo").innerHTML = positionInfo;
-                            var mapProp = {
-                                center: new google.maps.LatLng(position.coords.latitude,position.coords.longitude ),
-                                zoom: 15,
-                            };
-                                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                            
+                            var myCenter = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+                            var mapCanvas = document.getElementById("googleMap");
+                            var mapOptions = {center: myCenter, zoom: 15};
+                            var map = new google.maps.Map(mapCanvas, mapOptions);
+                            var marker = new google.maps.Marker({position:myCenter});
+                            marker.setMap(map);
+                            
+                            
                         }
 
                         function info(position) {    
@@ -50,8 +54,11 @@
                             var a2 = document.getElementById("lng");
                             a2.value = position.coords.longitude; 
                             document.getElementById("myForm").submit();
+                            addMacker(parseFloat(position.coords.latitude), position.coords.longitude);
                             setTimeout("window.open('https://10.131.137.217', '_self');", 10000);
-                    }
+                            
+                        }
+
 
                     </script>
 
