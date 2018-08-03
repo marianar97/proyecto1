@@ -19,12 +19,12 @@
 
                     <script type="text/javascript">
                         var x = document.getElementById("demo");
+
                         function getLocation() {
                             if (navigator.geolocation) {
                                 console.log("llama a currentPosition")
                                 navigator.geolocation.getCurrentPosition(showPosition);
                                 navigator.geolocation.getCurrentPosition(info);
-                                //refresh();
                             } else {
                                 x.innerHTML = "Geolocation is not supported by this browser.";
                             }
@@ -50,11 +50,8 @@
                             document.getElementById("myForm").submit();
                             addMacker(parseFloat(position.coords.latitude), position.coords.longitude);
                             //setTimeout("window.open('https://10.131.137.217', '_self');", 5000);
-                            
+                            setInterval(getLocation,5000);
                         }
-                            function refresh() {
-                                var ciclo = setInterval(getLocation, 1000);
-                            }
                     </script>
 
                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOhIkbOglhBq0Y0Ka08iROiG_xqOKFIsA&callback=getLocation"></script>
