@@ -1,38 +1,38 @@
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const exphbs = require('express-handlebars');
-const expressValidator = require('express-validator');
-const flash = require('connect-flash');
-const session = require('express-session');
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const mongo = require('mongodb');
-const mongoose = require('mongoose');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var exphbs = require('express-handlebars');
+var expressValidator = require('express-validator');
+var flash = require('connect-flash');
+var session = require('express-session');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var mongo = require('mongodb');
+var mongoose = require('mongoose');
 
-//mongoose.connect('mongodb://localhost/login');
+mongoose.connect('mongodb://localhost/login');
 
-mongoose.connect('mongodb://mongo-server/login');
-const db = mongoose.connection;
+// mongoose.connect('mongodb://mongo-server/login');
+var db = mongoose.connection;
 
-const routes = require('./routes/index');
-const users = require('./routes/users');
+var routes = require('./routes/index');
+var users = require('./routes/users');
 
-// Inicializa la aplicación
-let app = express();
+// Init App
+var app = express();
 
-// Vista
-app.set('views', path.join(__dirname, 'views')); // el folder llamado views muestre las vistas
+// View Engine
+app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', exphbs({ defaultLayout: 'layout' }));
 app.set('view engine', 'handlebars');
 
-//Middleware
+// BodyParser Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// Directorio estático / publico
+// Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Express Session
@@ -67,7 +67,6 @@ app.use(expressValidator({
 // Connect Flash
 app.use(flash());
 
-
 // Global Vars
 app.use(function(req, res, next) {
     res.locals.success_msg = req.flash('success_msg');
@@ -77,9 +76,10 @@ app.use(function(req, res, next) {
     next();
 });
 
+
+
 app.use('/', routes);
 app.use('/users', users);
-
 
 // Set Port
 app.set('port', (process.env.PORT || 3000));
