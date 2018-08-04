@@ -118,7 +118,7 @@ router.get('/index', function(req, res) {
 var UserLocation = require('../models/location');
 
 
-router.post('/index', function(req, res) {
+router.post('/location', function(req, res) {
     var latitude = req.body.lat;
     var longitude = req.body.lng;
     var username = req.user.username
