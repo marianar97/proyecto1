@@ -11,7 +11,8 @@
 
                 <!-- Se determina y escribe la localizacion -->
 
-
+                <div id="demo"></div>
+                <div id="mapholder"></div>
                 <div id='ubicacion'></div>
                 <script type="text/javascript">
 
@@ -26,40 +27,42 @@
                     var div = document.getElementById("ubicacion");
                     div.innerHTML = "Latitud: " + latitud + "<br>Longitud: " + longitud;
                     
-                    }
+                }
 
                 function refrescarUbicacion() {
-                    navigator.geolocation.watchPosition(mostrarUbicacion);}
+                    navigator.geolocation.watchPosition(mostrarUbicacion);
+                }
                 </script>
 
-                <!-- Se escribe un mapa con la localizacion anterior-->
+                <!-- Se escribe un mapa con la localizacion anterior
                 <div id="demo"></div>
-                <div id="mapholder"></div>
+                <div id="mapholder"></div>-->
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOhIkbOglhBq0Y0Ka08iROiG_xqOKFIsA"></script>
                 <button onclick="cargarmap()">Cargar mapa</button>
+
+
                 <script type="text/javascript">
-                var x=document.getElementById("demo");
-                function cargarmap(){
-                navigator.geolocation.getCurrentPosition(showPosition,showError);
-                function showPosition(position)
-                {
-                lat=position.coords.latitude;
-                lon=position.coords.longitude;
-                latlon=new google.maps.LatLng(lat, lon)
-                mapholder=document.getElementById('mapholder')
-                mapholder.style.height='250px';
-                mapholder.style.width='500px';
-                var myOptions={
-                center:latlon,zoom:10,
-                mapTypeId:google.maps.MapTypeId.ROADMAP,
-                mapTypeControl:false,
-                navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
-                };
-                var map=new google.maps.Map(document.getElementById("mapholder"),myOptions);
-                var marker=new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
-                }
-                function showError(error)
-                {
+                    var x=document.getElementById("demo");
+                    function cargarmap(){
+                        navigator.geolocation.getCurrentPosition(showPosition,showError);
+
+                    function showPosition(position){
+                        lat=position.coords.latitude;
+                        lon=position.coords.longitude;
+                        latlon=new google.maps.LatLng(lat, lon)
+                        mapholder=document.getElementById('mapholder')
+                        mapholder.style.height='4000px';
+                        mapholder.style.width='600px';
+                        var myOptions={
+                            center:latlon,zoom:15,
+                            mapTypeId:google.maps.MapTypeId.ROADMAP,
+                            mapTypeControl:false,
+                            navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+                            };
+                        var map=new google.maps.Map(document.getElementById("mapholder"),myOptions);
+                        var marker=new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
+                    }
+                function showError(error){
                 switch(error.code)
                     {
                     case error.PERMISSION_DENIED:
@@ -77,6 +80,8 @@
                     }
                 }}
                 </script>
+
+                
 
                 
                   <!--  <div id="googleMap" style="width:100%;height:400px;"></div>
