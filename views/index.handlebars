@@ -70,6 +70,10 @@
                         var marker=new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
                         document.getElementById("latitude").value = position.coords.latitude;
                         document.getElementById("longitude").value = position.coords.longitude;
+                        document.form.latitude.value ;
+                        document.form.longitude.value;
+        
+                        document.form.submit();
                     }
                 function showError(error){
                 switch(error.code)
