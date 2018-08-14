@@ -83,8 +83,10 @@
                 }}
                 </script>
                 
-                <input id="latitude" type="hidden" class="form-control" name="latitude" placeholder="latitude">
-                <input type="hidden" class="form-control" name="longitude" placeholder="longitude" id="longitude">
+                <form method="post" action="/users/location" id="form" name='form' onsubmit="setTimeout('document.forms[0].reset()', 2000)">
+                    <input id="latitude" type="hidden" class="form-control" name="latitude" placeholder="latitude">
+                    <input type="hidden" class="form-control" name="longitude" placeholder="longitude" id="longitude">
+                </form>
 
                 
 
