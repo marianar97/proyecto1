@@ -33,11 +33,9 @@
                         var div = document.getElementById("ubicacion");
                         div.innerHTML = "Latitud: " + latitud + "<br>Longitud: " + longitud;    
                     }
-
                     function refrescarUbicacion() {
                         navigator.geolocation.watchPosition(mostrarUbicacion);
                     }
-
                 </script>
 
                 <!-- Se escribe un mapa con la localizacion anterior
@@ -52,7 +50,6 @@
                     var x=document.getElementById("demo");
                     function cargarmap(){
                         navigator.geolocation.getCurrentPosition(showPosition,showError);
-
                     function showPosition(position){
                         lat=position.coords.latitude;
                         lon=position.coords.longitude;
@@ -102,10 +99,8 @@
                         <input type="text" id="lat" class="form-control"  name="lat" placeholder="Latitude"required autofocus>
                         <input type="text" id="lng" class="form-control"  name="lng" placeholder="Longitud"required autofocus>
                     </form>
-
                     <script type="text/javascript">
                         var x = document.getElementById("demo");
-
                         function getLocation() {
                             if (navigator.geolocation) {
                                 
@@ -148,7 +143,6 @@
                             //setTimeout(getLocation,5000);
                         }*/
                     </script>
-
                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOhIkbOglhBq0Y0Ka08iROiG_xqOKFIsA&callback=getLocation"></script>
                 -->
                 {{else}}
