@@ -15,7 +15,7 @@
                 <div id="mapholder"></div>
                 <div id='ubicacion'></div>
                 <script type="text/javascript">
-
+                    cargarmap();
                     if (navigator.geolocation) {
                         navigator.geolocation.getCurrentPosition(mostrarUbicacion);
                     } else {
