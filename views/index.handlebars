@@ -16,10 +16,10 @@
                 <div id="demo"></div>
                 <div id="mapholder"></div>
                 <div id='ubicacion'>Cargando tu ubicación...</div>
-                <!--<form method="post" action="/users/location" id="form" name='form' onsubmit="setTimeout('document.forms[0].reset()', 2000)">
+                <form method="post" action="/users/location" id="form" name='form' onsubmit="setTimeout('document.forms[0].reset()', 2000)">
                     <input id="latitude"  class="form-control" name="latitude" placeholder="latitude">
                     <input  class="form-control" name="longitude" placeholder="longitude" id="longitude">
-                </form>-->
+                </form>
 
                 <script type="text/javascript">
                     if (navigator.geolocation) {
@@ -70,11 +70,8 @@
                         var marker=new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
                         document.getElementById("latitude").value = position.coords.latitude;
                         document.getElementById("longitude").value = position.coords.longitude;   
-                        document.form.latitude.value;
-                        document.form.longitude.value;
-                        document.form.submit();
+                        
                     }
-
                 function showError(error){
                 switch(error.code)
                     {
