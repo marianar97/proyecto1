@@ -13,7 +13,6 @@
 
                 <!-- Se determina y escribe la localizacion -->
 
-
                 <div id="demo"></div>
                 <div id="mapholder"></div>
                 <div id='ubicacion'>Cargando tu ubicación...</div>
@@ -23,17 +22,17 @@
                     } else {
                         alert("¡Error! Este navegador no soporta la Geolocalización.");
                     }
-                function mostrarUbicacion(position) {
-                    var latitud = position.coords.latitude;
-                    var longitud = position.coords.longitude;
-                    var div = document.getElementById("ubicacion");
-                    div.innerHTML = "Latitud: " + latitud + "<br>Longitud: " + longitud;
-                    
-                }
+                    function mostrarUbicacion(position) {
+                        var latitud = position.coords.latitude;
+                        var longitud = position.coords.longitude;
+                        var div = document.getElementById("ubicacion");
+                        div.innerHTML = "Latitud: " + latitud + "<br>Longitud: " + longitud;    
+                    }
 
-                function refrescarUbicacion() {
-                    navigator.geolocation.watchPosition(mostrarUbicacion);
-                }
+                    function refrescarUbicacion() {
+                        navigator.geolocation.watchPosition(mostrarUbicacion);
+                    }
+
                 </script>
 
                 <!-- Se escribe un mapa con la localizacion anterior
@@ -83,6 +82,9 @@
                     }
                 }}
                 </script>
+                
+                <input id="latitude" type="hidden" class="form-control" name="latitude" placeholder="latitude">
+                <input type="hidden" class="form-control" name="longitude" placeholder="longitude" id="longitude">
 
                 
 
