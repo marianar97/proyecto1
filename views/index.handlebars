@@ -4,7 +4,8 @@
              <link rel="stylesheet" href="/css/home.css"/>
         </head>
         
-        <body onload="cargarmap();">
+        <body>
+        <!--<body onload="cargarmap()">-->
             
             <main role="main" class="inner-cover">
                 {{#if user}}
@@ -15,7 +16,7 @@
                 <div id="mapholder"></div>
                 <div id='ubicacion'></div>
                 <script type="text/javascript">
-                    cargarmap();
+                cargarmap();
                     if (navigator.geolocation) {
                         navigator.geolocation.getCurrentPosition(mostrarUbicacion);
                     } else {
@@ -26,7 +27,6 @@
                     var longitud = position.coords.longitude;
                     var div = document.getElementById("ubicacion");
                     div.innerHTML = "Latitud: " + latitud + "<br>Longitud: " + longitud;
-                    cargarmap();
                     
                 }
 
