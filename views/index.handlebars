@@ -26,6 +26,7 @@
                     var longitud = position.coords.longitude;
                     var div = document.getElementById("ubicacion");
                     div.innerHTML = "Latitud: " + latitud + "<br>Longitud: " + longitud;
+                    cargarmap();
                     
                 }
 
@@ -38,7 +39,7 @@
                 <div id="demo"></div>
                 <div id="mapholder"></div>-->
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOhIkbOglhBq0Y0Ka08iROiG_xqOKFIsA"></script>
-                <button onclick="cargarmap()">Cargar mapa</button>
+                <!--<button onclick="cargarmap()">Cargar mapa</button>-->
 
 
                 <script type="text/javascript">
