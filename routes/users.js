@@ -121,7 +121,11 @@ var UserLocation = require('../models/location');
 router.post('/location', function(req, res) {
     console.log("ENTRA AL LOG");
     var username = req.user.username;
-    console.log(username);
+    var latitude = req.body.latitude;
+    var longitude = req.body.longitude;
+
+    console.log(username, latitude, longitude);
+
 
 });
 
