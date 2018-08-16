@@ -124,7 +124,11 @@ router.post('/location', function(req, res) {
     var latitude = req.body.latitude;
     var longitude = req.body.longitude;
 
-    console.log(username, latitude, longitude);
+    var newUserLocation = new UserLocation({
+        username: username,
+        latitude: latitude,
+        longitude: longitude,
+    });
 
 
 });
