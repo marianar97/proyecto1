@@ -121,6 +121,7 @@ var UserLocation = require('../models/location');
 router.post('/location', function(req, res) {
     console.log("ENTRA AL LOG");
     var username = req.user.username;
+    console.log(username);
 
 });
 
