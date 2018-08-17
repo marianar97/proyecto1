@@ -129,6 +129,7 @@ router.post('/location', function(req, res) {
         latitude: latitude,
         longitude: longitude,
     });
+    console.log(newUserLocation);
 
 
 });
